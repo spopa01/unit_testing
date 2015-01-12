@@ -10,10 +10,10 @@
 #define S(e)  S_(e)
 
 struct errmsg{
-    std::shared_ptr<std::stringstream> msg;
-    errmsg() : msg(new std::stringstream){}
-    template <class T> errmsg& operator<<(T value){ (*msg) << value; return *this; }
-    std::string str() { return msg->str(); }
+  std::shared_ptr<std::stringstream> msg;
+  errmsg() : msg(new std::stringstream){}
+  template <class T> errmsg& operator<<(T value){ (*msg) << value; return *this; }
+  std::string str() { return msg->str(); }
 };
 
 #define TEST_WHERE  __FILE__ "(" S(__LINE__) "): "
